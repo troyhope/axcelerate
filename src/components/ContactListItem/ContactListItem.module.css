@@ -1,0 +1,60 @@
+.contactListItem {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  gap: 12px;
+  height: 52px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.contactListItem:hover {
+  background-color: #f2f5f7;
+}
+
+.contactListItem:active {
+  background-color: #e6ecef;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #20374b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.email {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #5a6d80;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.highlighted {
+  background-color: #f4f1fd;
+}
+
+.highlightedNoEmail .name {
+  color: #6b46ef;
+}

@@ -3,9 +3,11 @@ export default {
   testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleNameMapper: {
-    ".(css|less|scss|sass)$": "identity-obj-proxy",
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
 
-    ".(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/__mocks__/fileMock.js",
+    "\\.(jpg|jpeg|png|gif|webp)$": "<rootDir>/__mocks__/fileMock.js",
+
+    "\\.svg(?:\\?react)?$": "<rootDir>/__mocks__/svgMock.tsx",
 
     "^@/(.*)$": "<rootDir>/src/$1",
   },
@@ -13,14 +15,12 @@ export default {
     "^.+.tsx?$": [
       "ts-jest",
       {
-        tsconfig: "tsconfig.json",
+        tsconfig: "tsconfig.app.json",
       },
     ],
   },
 
-  transformIgnorePatterns: [
-    "[/\\]node_modules[/\\].+.(js|jsx|mjs|cjs|ts|tsx)$",
-  ],
+  transformIgnorePatterns: ["/node_modules/"],
 
   collectCoverage: true,
   coverageDirectory: "coverage",

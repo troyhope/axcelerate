@@ -40,3 +40,36 @@
 .read-the-docs {
   color: #888;
 }
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+.contactListContainer {
+  width: 100%;
+  max-width: 400px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .appContainer {
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .contactListContainer {
+    padding: 0;
+    margin-top: 15px;
+  }
+}

@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+# aXcelerate Frontend Challenge: Contact List Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a reusable React contact list component based on the provided Figma design, documented with Storybook and tested with Jest/React Testing Library.
 
-Currently, two official plugins are available:
+## Project Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Install dependencies:**
 
-## Expanding the ESLint configuration
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Available Scripts
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Running the Development Server
+
+To start the Vite development server and view the component integrated (if applicable, e.g., in `App.tsx`):
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will typically open the application in your browser at `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Viewing Storybook Documentation
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To run Storybook and view the interactive component documentation:
+
+```bash
+npm run storybook
 ```
+
+This will typically open Storybook in your browser at `http://localhost:6006`.
+
+### Running Unit Tests
+
+To execute the Jest unit tests:
+
+```bash
+npm test
+```
+
+This will run the tests defined in `*.test.tsx` files and display the results in the console, along with coverage information.
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- CSS Modules
+- Storybook
+- Jest + React Testing Library
+
+## Component Structure
+
+Components are located in `src/components/`:
+
+- `ContactList`: Main orchestrating component.
+- `SearchField`: Input field for filtering.
+- `Section`: Collapsible section containing a header and items.
+- `SectionHeader`: Clickable header for each section.
+- `ContactListItem`: Displays individual contact information.
+- `Avatar`: Displays the contact's image.
+
+Icons (.svg) are stored in `src/assets/`.
